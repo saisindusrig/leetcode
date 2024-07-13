@@ -1,28 +1,26 @@
 class Solution {
     public List<Integer> luckyNumbers (int[][] matrix) {
-        List<Integer> luckyNumbers = new ArrayList<>();
-        //minimum element in its row and maximum in its column.
+        List<Integer> luckyNums = new ArrayList<>(); 
         for(int i=0;i<matrix.length;i++){
-            int minVal = Integer.MAX_VALUE;
-            int minIndex = -1;
-            for(int j=0;j<matrix[i].length;j++){ //max in colomum
-                if (matrix[i][j] < minVal) {
-                    minVal = matrix[i][j];
-                    minIndex = j;
+            int minValue = Integer.MAX_VALUE;
+            int minIn = -1;
+            for(int j=0;j<matrix[i].length;j++){
+                if(matrix[i][j]< minValue){
+                    minValue = matrix[i][j];
+                    minIn =j;
                 }
-            }boolean isMaxInCol = true;
-            for (int k = 0; k < matrix.length; k++) {
-                if (matrix[k][minIndex] > minVal) {
-                    isMaxInCol = false;
-                    break;
+            } 
+            boolean isLucky= true;
+             for(int m=0;m<matrix.length;m++){
+                if(matrix[m][minIn]>minValue){
+                    isLucky = false;
                 }
             }
-
-            if (isMaxInCol) {
-                luckyNumbers.add(minVal);
+            if(isLucky){
+                luckyNums.add(minValue);
             }
         }
+        return luckyNums;
 
-        return luckyNumbers;
         }
     }
