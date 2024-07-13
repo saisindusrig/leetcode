@@ -14,7 +14,7 @@ class Solution {
             for (int k = 0; k < matrix.length; k++) {
                 if (matrix[k][minIndex] > minVal) {
                     isMaxInCol = false;
-                    
+                    break;
                 }
             }
 
