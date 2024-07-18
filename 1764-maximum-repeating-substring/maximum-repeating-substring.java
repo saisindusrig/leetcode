@@ -1,11 +1,11 @@
 class Solution {
     public int maxRepeating(String sequence, String word) {
-        int k = 0;
-        String repeatedWord = "";
-        while (sequence.contains(repeatedWord + word)) {
-            repeatedWord += word;
-            k++;
+        int count =0;
+        String words ="";
+        while(sequence.contains(words+word)){
+            words+=word;
+            count++;
         }
-        return k;
+        return count;
     }
 }
