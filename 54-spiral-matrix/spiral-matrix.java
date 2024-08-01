@@ -7,8 +7,8 @@ class Solution {
                 arr.add(matrix[rs][i]);
             }
             rs++;
-            for(int j=rs;j<=re;j++){
-                arr.add(matrix[j][ce]);
+            for(int i=rs;i<=re;i++){
+                arr.add(matrix[i][ce]);
             }
             ce--;
             if(rs<=re){
@@ -16,8 +16,7 @@ class Solution {
                     arr.add(matrix[re][i]);
                 }
                 re--;
-            }
-            if(cs<=ce){
+            }if(cs<=ce){
                 for(int i=re;i>=rs;i--){
                     arr.add(matrix[i][cs]);
                 }
