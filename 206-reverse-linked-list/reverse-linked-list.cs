@@ -9,7 +9,7 @@
  *     }
  * }
  */
-public class Solution {
+public class Solution { //very important model in linked list
     public ListNode ReverseList(ListNode head) {
         ListNode prev = null;
         ListNode pres = head;
