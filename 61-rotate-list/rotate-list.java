@@ -14,22 +14,19 @@ class Solution {
             return head;
         }
         ListNode temp = head;
-        int n = 1;
-        while (temp.next != null) {
-            temp = temp.next;
+        int n=1;
+        while(temp.next!=null){
+            temp=temp.next;
             n++;
-        } //calculate org len
-
-        k = k % n;
-        temp.next = head; // connect the last node to the head
-
-        ListNode prev = head;
-        for (int i = 0; i < n - k - 1; i++) {
-            prev = prev.next; //tail
         }
-        ListNode newHead = prev.next;
-        prev.next = null; // disconnect the new tail from the rest of the list
-
-        return newHead;
+        temp.next = head;
+        k = k%n; // better way if k>n
+        ListNode tail = head;
+        for(int i=0;i<n-k-1;i++){
+            tail= tail.next;
+        }
+        ListNode nh = tail.next;
+        tail.next = null;
+        return nh;
     }
 }
