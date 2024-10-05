@@ -1,5 +1,5 @@
-// insertion is efficient here O(1)
-// but removal is O(N)
+// removal is efficient here O(1)
+// but insertion is O(N)
 class MyQueue {
     Stack<Integer> stack1;
     Stack<Integer> stack2;
