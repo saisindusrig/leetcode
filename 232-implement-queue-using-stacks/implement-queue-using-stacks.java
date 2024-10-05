@@ -1,3 +1,5 @@
+// insertion is efficient here O(1)
+// but removal is O(N)
 class MyQueue {
     Stack<Integer> stack1;
     Stack<Integer> stack2;
@@ -8,36 +10,23 @@ class MyQueue {
     }
     
     public void push(int x) {
+        while(!(stack1.isEmpty())){
+            stack2.push(stack1.pop());
+        }
         stack1.push(x);
-        
+        while(!(stack2.isEmpty())){
+            stack1.push(stack2.pop());
+        }
     }
     
     public int pop() {
-        while(!(stack1.isEmpty())){
-            stack2.push(stack1.pop());
-
-        }
-        //stack1 emptied
-        int rem = stack2.pop();
-        while(!(stack2.isEmpty())){
-            stack1.push(stack2.pop());
-        }
-        return rem;
-
+       int pop = stack1.pop();
+       return pop;
     }
     
     public int peek() { 
-        while(!(stack1.isEmpty())){
-            stack2.push(stack1.pop());
-
-        }
-        //stack1 emptied
-        int peek = stack2.peek();
-        while(!(stack2.isEmpty())){
-            stack1.push(stack2.pop());
-        }
-        return peek;
-        
+        int peeked =stack1.peek();
+        return peeked;
     }
     
     public boolean empty() {
