@@ -5,25 +5,25 @@ class Solution {
         
         int dom = majority(nums);
        
-        int tc= 0;
-        for (int num : nums) {
-            if (num == dom) {
-                tc++;
-            }
+       int td=0;
+       for(int n:nums){
+        if(n==dom){
+            td++;
         }
-        int l=0;
-        for(int i=0;i<nums.size()-1;i++){
-            if(nums.get(i)==dom){
-                l++;
-            }
-        
-            int r = tc-l;
-            int ls = i+1;
-            int rs = nums.size()-ls;
-            if(2*l>ls && 2*r>rs){
-                return i;
-            }
-}
+       }
+       int l=0;
+       for(int i=0;i<nums.size();i++){
+        if(nums.get(i)==dom){
+            l++;
+        }
+        int r = td-l;
+        int ls = i+1;
+        int rs = nums.size()-ls;
+
+        if(2*l>ls && 2*r>rs){
+            return i;
+        }
+       }
         
         return -1;
     
