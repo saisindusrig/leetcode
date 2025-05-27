@@ -3,16 +3,18 @@ class Solution {
         //m gives since where should we start putting nums2
         //len of nums1 is m+n
         //start from m to m+n
-        int k=0;
-        for(int i=m;i<nums1.length;i++){
-            nums1[i]=nums2[k];
-            if(k<n){
-                k++;
+        int k=m+n-1; //last
+        int i=m-1,j= n-1; //nums2
+        while (j>=0){
+            if(i>=0 && nums1[i]>nums2[j]){
+                nums1[k]=nums1[i];
+                i--;
             }else{
-                break;
+                nums1[k] = nums2[j];
+                j--;
             }
+            k--;
         }
-        Arrays.sort(nums1);
        
     }
 }
